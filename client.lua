@@ -60,25 +60,3 @@ function DrawTxt(str, x, y, w, h, enableShadow, col1, col2, col3, a, centre)
    Citizen.InvokeNative(0xADA9255D, 10);
    DisplayText(str, x, y)
 end
-
--- RegisterNetEvent('wcrp:goGuarma')
--- AddEventHandler('wcrp:goGuarma', function()
---     local ped = PlayerPedID()
---     DoScreenFadeOut(5000)
---     Wait(10000)
---     DoScreenFadeIn(5000)
---     SetEntityCoords(ped, 1269.55, -6854.188, 43.318)
---     Citizen.InvokeNative(0xA657EC9DBC6CC900, 1935063277)
---     Citizen.InvokeNative(0xE8770EE02AEE45C2, 1)
---     Citizen.InvokeNative(0x74E2261D2A66849A, true)
---     guarma = true
--- end)
-
--- RegisterNetEvent('wcrp:backGuarma')
--- AddEventHandler('wcrp:backGuarma', function()
---     local ped = PlayerPedID()
---     DoScreenFadeOut(5000)
---     Wait(10000)
---     DoScreenFadeIn(5000)
---     SetEntityCoords(ped, 318.6848, -1297.046, 44.12645)
--- end)
