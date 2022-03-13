@@ -1,3 +1,6 @@
+Config.PricetoGuarma = 3.5
+Config.PricetoSD = 0
+
 keys = {
     -- Letters
     ["A"] = 0x7065027D,
