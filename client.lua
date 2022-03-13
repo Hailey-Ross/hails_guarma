@@ -5,7 +5,7 @@ Citizen.CreateThread(function()
 		Citizen.Wait(1)
 		local coords = GetEntityCoords(PlayerPedId())
     if (Vdist(coords.x, coords.y, coords.z, 2671.13, -1552.96, 46.47) < 2.0) then
-            DrawTxt("Press [~e~G~q~] to Buy ticket to Guarma [~e~$3.50~q~]", 0.50, 0.85, 0.7, 0.7, true, 255, 255, 255, 255, true)
+            DrawTxt(Config.TraveltextTOGuarma, 0.50, 0.85, 0.7, 0.7, true, 255, 255, 255, 255, true)
             if IsControlJustReleased(0, 0x760A9C6F) then -- g
                 local player = PlayerPedId()
                 TriggerServerEvent('wcrp:guarmaticketbuy')
@@ -30,7 +30,7 @@ Citizen.CreateThread(function()
 		Citizen.Wait(1)
 		local coords = GetEntityCoords(PlayerPedId())
     if (Vdist(coords.x, coords.y, coords.z, 1270.0314, -6854.6113, 43.4185) < 2.0) then
-            DrawTxt("Press [~e~G~q~] to return to Saint Denis", 0.50, 0.85, 0.7, 0.7, true, 255, 255, 255, 255, true)
+            DrawTxt(Config.TraveltextTOSD, 0.50, 0.85, 0.7, 0.7, true, 255, 255, 255, 255, true)
             if IsControlJustReleased(0, 0x760A9C6F) then -- g
                 local player = PlayerPedId()
                 TriggerServerEvent('wcrp:guarmaticketbuy2')
