@@ -1,3 +1,5 @@
+Config = {}
+
 Config.PricetoGuarma = 3.5
 Config.PricetoSD = 0
 
