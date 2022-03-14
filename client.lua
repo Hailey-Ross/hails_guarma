@@ -1,24 +1,24 @@
-
-
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1)
 		local coords = GetEntityCoords(PlayerPedId())
-    if (Vdist(coords.x, coords.y, coords.z, 2671.13, -1552.96, 46.47) < 2.0) then
-            DrawTxt("Press [~e~G~q~] to Buy ticket to Guarma [~e~$3.50~q~]", 0.50, 0.85, 0.7, 0.7, true, 255, 255, 255, 255, true)
-            if IsControlJustReleased(0, 0x760A9C6F) then -- g
+        local traveltext = Config.TraveltextTOGuarma
+        if (Vdist(coords.x, coords.y, coords.z, 2671.13, -1552.96, 46.47) < 2.0) then
+            DrawTxt( traveltext, 0.50, 0.85, 0.7, 0.7, true, 255, 255, 255, 255, true)
+            if IsControlJustReleased(0, 0x760A9C6F) then
                 local player = PlayerPedId()
                 TriggerServerEvent('wcrp:guarmaticketbuy')
+                TriggerEvent("vorp:TipBottom", Config.TravelTiptextTO, 5000)
                 FreezeEntityPosition(PlayerPedId(),true)
-				Wait(1600)
+		Wait(5000)
                 DoScreenFadeOut(5000)
-                Wait(10000)
-				FreezeEntityPosition(PlayerPedId(),false)
+                Wait(5000)
+		FreezeEntityPosition(PlayerPedId(),false)
                 SetEntityCoords(player, 1269.55, -6854.188, 43.318)
                 Citizen.InvokeNative(0xA657EC9DBC6CC900, 1935063277) -- Native setting Minimap by hash, can be either Guarma or World
                 Citizen.InvokeNative(0xE8770EE02AEE45C2, 1) -- Set Guarma Water Type
                 Citizen.InvokeNative(0x74E2261D2A66849A, true) -- Set Guarma Horizon Status
-				DoScreenFadeIn(4000)
+		DoScreenFadeIn(4000)
                 guarma = true
             end
         end
@@ -30,21 +30,22 @@ Citizen.CreateThread(function()
 		Citizen.Wait(1)
 		local coords = GetEntityCoords(PlayerPedId())
     if (Vdist(coords.x, coords.y, coords.z, 1270.0314, -6854.6113, 43.4185) < 2.0) then
-            DrawTxt("Press [~e~G~q~] to return to Saint Denis", 0.50, 0.85, 0.7, 0.7, true, 255, 255, 255, 255, true)
-            if IsControlJustReleased(0, 0x760A9C6F) then -- g
+            DrawTxt( Config.TraveltextTOSD, 0.50, 0.85, 0.7, 0.7, true, 255, 255, 255, 255, true)
+            if IsControlJustReleased(0, 0x760A9C6F) then
                 local player = PlayerPedId()
                 TriggerServerEvent('wcrp:guarmaticketbuy2')
-				FreezeEntityPosition(PlayerPedId(),true)
-				DoScreenFadeOut(5000)
+                TriggerEvent("vorp:TipBottom", Config.TravelTiptextFROM, 5000)
+		FreezeEntityPosition(PlayerPedId(),true)
+		DoScreenFadeOut(5000)
                 Wait(5000)
                 Citizen.InvokeNative(0x74E2261D2A66849A, 0)
                 Citizen.InvokeNative(0xA657EC9DBC6CC900, -1868977180)
                 Citizen.InvokeNative(0xE8770EE02AEE45C2, 0)
-                Wait(10000)
-				FreezeEntityPosition(PlayerPedId(),false)
-				SetEntityCoords(player, 2670.69, -1547.34, 46.47)
+                Wait(5000)
+		FreezeEntityPosition(PlayerPedId(),false)
+		SetEntityCoords(player, 2670.69, -1547.34, 46.47)
                 DoScreenFadeIn(4000)
-				guarma = false
+		guarma = false
             end
         end
     end
@@ -60,25 +61,3 @@ function DrawTxt(str, x, y, w, h, enableShadow, col1, col2, col3, a, centre)
    Citizen.InvokeNative(0xADA9255D, 10);
    DisplayText(str, x, y)
 end
-
--- RegisterNetEvent('wcrp:goGuarma')
--- AddEventHandler('wcrp:goGuarma', function()
---     local ped = PlayerPedID()
---     DoScreenFadeOut(5000)
---     Wait(10000)
---     DoScreenFadeIn(5000)
---     SetEntityCoords(ped, 1269.55, -6854.188, 43.318)
---     Citizen.InvokeNative(0xA657EC9DBC6CC900, 1935063277)
---     Citizen.InvokeNative(0xE8770EE02AEE45C2, 1)
---     Citizen.InvokeNative(0x74E2261D2A66849A, true)
---     guarma = true
--- end)
-
--- RegisterNetEvent('wcrp:backGuarma')
--- AddEventHandler('wcrp:backGuarma', function()
---     local ped = PlayerPedID()
---     DoScreenFadeOut(5000)
---     Wait(10000)
---     DoScreenFadeIn(5000)
---     SetEntityCoords(ped, 318.6848, -1297.046, 44.12645)
--- end)

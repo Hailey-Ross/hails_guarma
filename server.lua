@@ -6,20 +6,20 @@ end)
 
 RegisterServerEvent('wcrp:guarmaticketbuy')
 AddEventHandler("wcrp:guarmaticketbuy", function()
-    local _source = source
     local User = VorpCore.getUser(source)
+    local _source = source
     local Character = User.getUsedCharacter
-    Character.removeCurrency(0, 3.5)
-    TriggerClientEvent("vorp:TipBottom", _source, 'You purchase a ticket and Embark to Guarma', 5000)
-        
+    local _ticket = Config.PricetoGuarma
+    Character.removeCurrency(0, _ticket)
+
 end)
 
 RegisterServerEvent('wcrp:guarmaticketbuy2')
 AddEventHandler("wcrp:guarmaticketbuy2", function()
-    local _source = source
     local User = VorpCore.getUser(source)
+    local _source = source
     local Character = User.getUsedCharacter
-    Character.removeCurrency(0, 0)
-    TriggerClientEvent("vorp:TipBottom", _source, 'You use the ticket stub to Embark to Saint Denis', 5000)
-        
+    local _ticket = Config.PricetoSD
+    Character.removeCurrency(0, _ticket)
+
 end)
