@@ -3,6 +3,8 @@ A Forked version of wcrp_guarma which allows transport to Guarma.
 [Original Script](https://github.com/NeoGaming22/wcrp_guarma) Created by [NEO GREEN](https://github.com/NeoGaming22).  
 All credit goes to them.
 
+[Original README](https://github.com/Hailey-Ross/wcrp_guarma/blob/main/OG-README.md)
+
 ## Features / Fixes
 - Fixes issue with seeing ocean deload when returning from Guarma
 - Added Config Options for Price of Ticket both directions
