@@ -14,7 +14,7 @@ All credit goes to them.
 - Fix negative balance issue
 - Add transition screen instead of black screen during transport
 - Add Config Options for return coords
-- Add Config Options for to guarma coords
+- Add Config Options for guarma coords
 
 ## Dependencies:
 - [VORP-CORE](https://github.com/VORPCORE/VORP-Core)
