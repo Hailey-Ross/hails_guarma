@@ -9,15 +9,15 @@ Citizen.CreateThread(function()
                 local player = PlayerPedId()
                 TriggerServerEvent('wcrp:guarmaticketbuy')
                 TriggerEvent("vorp:TipBottom", Config.TravelTiptextTO, 5000)
-                FreezeEntityPosition(PlayerPedId(),true)
-		Wait(5000)
-                DoScreenFadeOut(5000)
+                FreezeEntityPosition(PlayerPedId(),true) -- Freeze person
+                DoScreenFadeOut(4000)
                 Wait(5000)
-		FreezeEntityPosition(PlayerPedId(),false)
                 SetEntityCoords(player, 1269.55, -6854.188, 43.318)
                 Citizen.InvokeNative(0xA657EC9DBC6CC900, 1935063277) -- Native setting Minimap by hash, can be either Guarma or World
                 Citizen.InvokeNative(0xE8770EE02AEE45C2, 1) -- Set Guarma Water Type
                 Citizen.InvokeNative(0x74E2261D2A66849A, true) -- Set Guarma Horizon Status
+                Wait(12000)
+                FreezeEntityPosition(PlayerPedId(),false) -- Unfreeze person
 		DoScreenFadeIn(4000)
                 guarma = true
             end
@@ -36,12 +36,12 @@ Citizen.CreateThread(function()
                 TriggerServerEvent('wcrp:guarmaticketbuy2')
                 TriggerEvent("vorp:TipBottom", Config.TravelTiptextFROM, 5000)
 		FreezeEntityPosition(PlayerPedId(),true)
-		DoScreenFadeOut(5000)
+		DoScreenFadeOut(4000)
                 Wait(5000)
                 Citizen.InvokeNative(0x74E2261D2A66849A, 0)
                 Citizen.InvokeNative(0xA657EC9DBC6CC900, -1868977180)
                 Citizen.InvokeNative(0xE8770EE02AEE45C2, 0)
-                Wait(5000)
+                Wait(12000)
 		FreezeEntityPosition(PlayerPedId(),false)
 		SetEntityCoords(player, 2670.69, -1547.34, 46.47)
                 DoScreenFadeIn(4000)
