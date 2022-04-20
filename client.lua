@@ -1,7 +1,7 @@
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
-		local coords = GetEntityCoords(PlayerPedId())
+	Citizen.Wait(1)
+	local coords = GetEntityCoords(PlayerPedId())
         local traveltext = Config.TraveltextTOGuarma
         local chance = math.random(1,5)
         local chance2 = math.random(1,5)
@@ -80,8 +80,8 @@ end)
 
 Citizen.CreateThread(function() -- TP Back from Guarma
 	while true do
-		Citizen.Wait(1)
-		local coords = GetEntityCoords(PlayerPedId())
+	Citizen.Wait(1)
+	local coords = GetEntityCoords(PlayerPedId())
         local chance = math.random(1,5)
         local chance2 = math.random(1,5)
         local chance3 = math.random(1,5)
