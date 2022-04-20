@@ -3,13 +3,16 @@ Config = {}
 Config.PricetoGuarma = 3.5
 Config.PricetoSD = 0
 
+Config.debug = false
+Config.transitions = true
+
 Config.NoMoney = 'You do not have enough cash to cover the Ticket Fee' -- Coming Soon
 
 Config.TravelTiptextTO = 'You purchase a ticket and Embark to Guarma'
 Config.TravelTiptextFROM = 'You use the ticket stub to Embark to Saint Denis'
 
 Config.TraveltextTOGuarma = "Press [~e~G~q~] to Buy ticket to Guarma [~e~$3.50~q~]"
-Config.TraveltextTOSD = "Press [~e~G~q~] to return to Saint Denis"
+Config.TraveltextTOSD = "Press [~e~G~q~] to return to Saint Denis [~e~Free~q~]"
 
 keys = {
     -- Letters
