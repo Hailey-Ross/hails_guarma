@@ -108,10 +108,10 @@ Citizen.CreateThread(function() -- TP Back from Guarma
                 TriggerEvent("vorp:TipBottom", Config.TravelTiptextFROM, 5000)
                 if Config.transitions == true then ExecuteCommand('hud') end
                 if Config.transitions == true then DoScreenFadeOut(3000) end
-				FreezeEntityPosition(Ped,true)
+		FreezeEntityPosition(Ped,true)
                 Wait(3000)
                 if Config.transitions == true then DoScreenFadeIn(500) end
-				if Config.transitions == true then Citizen.InvokeNative(0x1E5B70E53DB661E5, 0, 0, 0, 'Mainland', 'Saint Denis Harbor', 'Feeling refreshed. .') end
+		if Config.transitions == true then Citizen.InvokeNative(0x1E5B70E53DB661E5, 0, 0, 0, 'Mainland', 'Saint Denis Harbor', 'Feeling refreshed. .') end
                 Citizen.InvokeNative(0x74E2261D2A66849A, 0)
                 Citizen.InvokeNative(0xA657EC9DBC6CC900, -1868977180)
                 Citizen.InvokeNative(0xE8770EE02AEE45C2, 0)
@@ -149,7 +149,7 @@ Citizen.CreateThread(function() -- TP Back from Guarma
                 FreezeEntityPosition(Ped,false)
                 Wait(1000)
                 if Config.transitions == true then ExecuteCommand('hud') end
-				guarma = false
+		guarma = false
             end
         end
     end
