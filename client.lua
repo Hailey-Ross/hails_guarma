@@ -1,7 +1,7 @@
 Citizen.CreateThread(function()
 	while true do
-	Citizen.Wait(1)
-	local coords = GetEntityCoords(PlayerPedId())
+		Citizen.Wait(1)
+		local coords = GetEntityCoords(PlayerPedId())
         local traveltext = Config.TraveltextTOGuarma
         local chance = math.random(1,5)
         local chance2 = math.random(1,5)
@@ -67,7 +67,7 @@ Citizen.CreateThread(function()
                 end
                 FreezeEntityPosition(Ped,false) -- Unfreeze person
                 if Config.transitions == true then DoScreenFadeOut(1000) end
-                Wait(1000)
+                Wait(900)
                 if Config.transitions == true then ShutdownLoadingScreen() end
                 Wait(500)
                 if Config.transitions == true then DoScreenFadeIn(4000) end
