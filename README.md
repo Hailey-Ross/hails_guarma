@@ -9,10 +9,12 @@ All credit goes to them.
 - Fixes issue with seeing ocean deload when returning from Guarma
 - Added Config Options for Price of Ticket both directions
 - Added Config Options for *most* text that is displayed
+- Added Debug Config option
+- Added New Transitions
+- Added Multiple landing points for players
 
 ## TODO
 - Fix negative balance issue
-- Add transition screen instead of black screen during transport
 - Add Config Options for return coords
 - Add Config Options for guarma coords
 
