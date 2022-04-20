@@ -6,7 +6,7 @@ Config.PricetoSD = 0
 Config.debug = false
 Config.transitions = true
 
-Config.NoMoney = 'You do not have enough cash to cover the Ticket Fee' -- Coming Soon
+Config.NoMoney = 'You do not have enough cash to cover the Ticket Fee'
 
 Config.TravelTiptextTO = 'You purchase a ticket and Embark to Guarma'
 Config.TravelTiptextFROM = 'You use the ticket stub to Embark to Saint Denis'
