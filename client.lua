@@ -13,8 +13,8 @@ end
 
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
-		local coords = GetEntityCoords(PlayerPedId())
+	Citizen.Wait(1)
+	local coords = GetEntityCoords(PlayerPedId())
         local traveltext = Config.TraveltextTOGuarma
         local diceroll = math.random(1,5)
         local diceroll2 = math.random(1,5)
