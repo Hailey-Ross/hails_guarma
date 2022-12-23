@@ -3,6 +3,9 @@ Config = {}
 Config.PricetoGuarma = 3.5
 Config.PricetoSD = 0
 
+Config.SeedFloor = 1
+Config.SeedCeiling = 10
+
 Config.debug = false
 Config.transitions = true
 
