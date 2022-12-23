@@ -6,12 +6,13 @@ All credit goes to them.
 [Original README](https://github.com/Hailey-Ross/wcrp_guarma/blob/main/OG-README.md)
 
 ## Features / Fixes
-- Fixes issue with seeing ocean being unloaded during return from Guarma
-- Added Config Options for Price of Ticket both directions
-- Added Config Options for *most* text that is displayed
-- Added Debug Config option
-- Added New Transitions
-- Added Multiple landing points for players
+- FIXED Ocean unloading issues during Transportation
+- ADDED Config Options for Price of Ticket both directions
+- ADDED Config Options for *most* text that is displayed
+- ADDED Debug Config option
+- ADDED Multiple Landing Points
+- NEW Transitions
+- NEW Configuration options for RNG
 - NEW Random Number Generation Methods
 
 ## TODO
