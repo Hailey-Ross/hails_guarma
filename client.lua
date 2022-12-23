@@ -1,4 +1,15 @@
-math.randomseed(os.time() + math.random(Config.SeedFloor,Config.SeedCeiling))
+local Floor = Config.SeedFloor
+local Ceiling = Config.SeedCeiling
+local MasterCeiling = Ceiling + Ceiling
+local testsuccess, result = pcall(os.time)
+
+if testsuccess then
+ 	math.randomseed(os.time() + math.random(Floor,Ceiling))
+	if Config.Debug == true then print("os.time INSTALLED. Result: " .. result) end
+else
+ 	math.randomseed(math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(Floor,MasterCeiling))
+	if Config.Debug == true then print("os.time FAILED TEST. Result: " .. result) end
+end
 
 Citizen.CreateThread(function()
 	while true do
