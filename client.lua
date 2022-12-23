@@ -1,3 +1,5 @@
+math.randomseed(os.time() + math.random(Config.SeedFloor,Config.SeedCeiling))
+
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1)
