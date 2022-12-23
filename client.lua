@@ -5,16 +5,11 @@ Citizen.CreateThread(function()
 		Citizen.Wait(1)
 		local coords = GetEntityCoords(PlayerPedId())
         local traveltext = Config.TraveltextTOGuarma
-        local chance = math.random(1,5)
-        local chance2 = math.random(1,5)
-        local chance3 = math.random(1,5)
-        local chance4 = math.random(1,5)
-        local chance5 = math.random(1,5)
-        local diceroll = chance
-        local diceroll2 = chance2
-        local diceroll3 = chance3
-        local diceroll4 = chance4
-        local diceroll5 = chance5
+        local diceroll = math.random(1,5)
+        local diceroll2 = math.random(1,5)
+        local diceroll3 = math.random(1,5)
+        local diceroll4 = math.random(1,5)
+        local diceroll5 = math.random(1,5)
         local spawnroll = diceroll + diceroll2 + diceroll3 + diceroll4 + diceroll5
         if (Vdist(coords.x, coords.y, coords.z, 2671.13, -1552.96, 46.47) < 2.0) then
             DrawTxt( traveltext, 0.50, 0.85, 0.7, 0.5, true, 255, 255, 255, 255, true)
@@ -84,16 +79,11 @@ Citizen.CreateThread(function() -- TP Back from Guarma
 	while true do
 	Citizen.Wait(1)
 	local coords = GetEntityCoords(PlayerPedId())
-        local chance = math.random(1,5)
-        local chance2 = math.random(1,5)
-        local chance3 = math.random(1,5)
-        local chance4 = math.random(1,5)
-        local chance5 = math.random(1,5)
-        local diceroll = chance
-        local diceroll2 = chance2
-        local diceroll3 = chance3
-        local diceroll4 = chance4
-        local diceroll5 = chance5
+        local diceroll = math.random(1,5)
+        local diceroll2 = math.random(1,5)
+        local diceroll3 = math.random(1,5)
+        local diceroll4 = math.random(1,5)
+        local diceroll5 = math.random(1,5)
         local spawnroll = diceroll + diceroll2 + diceroll3 + diceroll4 + diceroll5
     if (Vdist(coords.x, coords.y, coords.z, 1265.8421, -6852.1635, 43.4185) < 2.0) then
             DrawTxt( Config.TraveltextTOSD, 0.50, 0.85, 0.7, 0.5, true, 255, 255, 255, 255, true)
