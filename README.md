@@ -6,7 +6,7 @@ All credit goes to them.
 [Original README](https://github.com/Hailey-Ross/wcrp_guarma/blob/main/OG-README.md)
 
 ## Features / Fixes
-- Fixes issue with seeing ocean deload when returning from Guarma
+- Fixes issue with seeing ocean being unloaded during return from Guarma
 - Added Config Options for Price of Ticket both directions
 - Added Config Options for *most* text that is displayed
 - Added Debug Config option
