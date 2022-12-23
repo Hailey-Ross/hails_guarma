@@ -12,6 +12,7 @@ All credit goes to them.
 - Added Debug Config option
 - Added New Transitions
 - Added Multiple landing points for players
+- NEW Random Number Generation Methods
 
 ## TODO
 - Fix negative balance issue
