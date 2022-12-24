@@ -3,13 +3,8 @@ local Ceiling = Config.SeedCeiling
 local MasterCeiling = Ceiling + Ceiling
 local testsuccess, result = pcall(os.time)
 
-if testsuccess then
- 	math.randomseed(os.time() + math.random(Floor,Ceiling))
-	if Config.Debug == true then print("os.time PASSED Test.") end
-else
- 	math.randomseed(math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(Floor,MasterCeiling))
-	if Config.Debug == true then print("os.time FAILED Test. Result: " .. result) end
-end
+math.randomseed(testsuccess and os.time() + math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(Floor,MasterCeiling) or math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(Floor,MasterCeiling))
+if Config.Debug == true then print(testsuccess and "os.time PASSED Test." or "os.time FAILED Test. Result: " .. result) end
 
 Citizen.CreateThread(function()
 	while true do
