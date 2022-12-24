@@ -4,7 +4,7 @@ local MasterCeiling = Ceiling + Ceiling
 local testsuccess, result = pcall(os.time)
 
 math.randomseed(testsuccess and os.time() + math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(Floor,MasterCeiling) or math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(Floor,MasterCeiling))
-if Config.Debug == true then print(testsuccess and "os.time PASSED Test." or "os.time FAILED Test. Result: " .. result) end
+if Config.debug == true then print(testsuccess and "os.time PASSED Test." or "os.time FAILED Test. Result: " .. result) end
 
 Citizen.CreateThread(function()
 	while true do
