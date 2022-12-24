@@ -4,11 +4,11 @@ local Ceiling = Config.SeedCeiling
 local MasterCeiling = Ceiling + Ceiling  --Create maximum
 local testsuccess, result = pcall(os.time) --Time Module Test Call
 local ctestsuccess, crypto = pcall(require, "crypto") --Crypto Module Test Call
-local seed = math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(Floor,MasterCeiling) -- Default Seed Generation ALL BUILT IN LUA
+local seed = math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,2) - math.random(Floor,MasterCeiling) -- Default Seed Generation ALL BUILT IN LUA
 local time --set Time Variable
 
 if ctestsuccess and testsuccess then --IF we have both required modules pass their tests, use both for Seed Generation
-	time = os.time() % 100000
+	time = os.time() % 10000
 	seed = crypto.rng() * (Ceiling - Floor) + time + math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(Floor,MasterCeiling)
         math.randomseed(seed)
             if Debug == true then print("Crypto Module PASSED Test."); print("os.time PASSED Test. Result: " .. result); print("Resulting SEED: " ..seed) end
@@ -17,7 +17,7 @@ elseif ctestsuccess then --IF only crypto passes, use that for seed generation
         math.randomseed(seed)
             if Debug == true then print("Crypto Module PASSED Test."); print("os.time FAILED Test. Result: " .. result); print("Resulting SEED: " ..seed) end
 elseif testsuccess then --IF only time passes its test then use that for seed generation
-	time = os.time() % 100000
+	time = os.time() % 10000
 	seed = time + math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(Floor,MasterCeiling)
         math.randomseed(seed)
             if Debug == true then print("Crypto Module FAILED Test."); print("os.time PASSED Test. Result: " .. result); print("Resulting SEED: " ..seed) end
@@ -31,11 +31,11 @@ Citizen.CreateThread(function()
 	Citizen.Wait(1)
 	local coords = GetEntityCoords(PlayerPedId())
         local traveltext = Config.TraveltextTOGuarma
-        local diceroll = math.random(1,5)
-        local diceroll2 = math.random(1,5)
-        local diceroll3 = math.random(1,5)
-        local diceroll4 = math.random(1,5)
-        local diceroll5 = math.random(1,5)
+        local diceroll = math.random(1,12)
+        local diceroll2 = math.random(1,12)
+        local diceroll3 = math.random(1,12)
+        local diceroll4 = math.random(1,12)
+        local diceroll5 = math.random(1,12)
         local spawnroll = diceroll + diceroll2 + diceroll3 + diceroll4 + diceroll5
         if (Vdist(coords.x, coords.y, coords.z, 2671.13, -1552.96, 46.47) < 2.0) then
             DrawTxt( traveltext, 0.50, 0.85, 0.7, 0.5, true, 255, 255, 255, 255, true)
@@ -54,19 +54,19 @@ Citizen.CreateThread(function()
                 Citizen.InvokeNative(0xE8770EE02AEE45C2, 1) -- Set Guarma Water Type
                 Citizen.InvokeNative(0x74E2261D2A66849A, true) -- Set Guarma Horizon Status
                 Wait(20000)
-                if spawnroll == 5 then
+                if spawnroll <= 5 and spawnroll >= 15 then
                     if Config.debug == true then print("Section: 5"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 1269.325, -6851.982, 43.168)
-                elseif spawnroll >= 6 and spawnroll <= 9 then
+                elseif spawnroll <= 16 and spawnroll >= 26 then
                     if Config.debug == true then print("Section: 6-9"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 1269.55, -6854.188, 43.168)
-                elseif spawnroll >= 10 and spawnroll <= 15 then
+                elseif spawnroll <= 27 and spawnroll >= 37 then
                     if Config.debug == true then print("Section: 10-15"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 1269.724, -6855.1577, 43.168)
-                elseif spawnroll >= 16 and spawnroll <= 20 then
+                elseif spawnroll <= 38 and spawnroll >= 48 then
                     if Config.debug == true then print("Section: 16-20"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 1270.245, -6854.557, 43.168)
-                elseif spawnroll >= 21 and spawnroll <= 25 then
+                elseif spawnroll <= 49 and spawnroll >= 56 then
                     if Config.debug == true then print("Section: 21-25"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 1265.973, -6854.015, 43.168)
                 else
