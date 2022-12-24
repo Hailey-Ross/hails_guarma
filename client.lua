@@ -5,9 +5,9 @@ local MasterCeiling = Ceiling + Ceiling  --Create maximum
 local testsuccess, result = pcall(os.time) --Time Module Test Call
 local ctestsuccess, crypto = pcall(require, "crypto") --Crypto Module Test Call
 local seed = math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(Floor,MasterCeiling) -- Default Seed Generation ALL BUILT IN LUA
-local time --Empty Time Variable
+local time --set Time Variable
 
-if ctestsuccess and testsuccess then --IF we have Crypto and Time pass their tests, use both for Seed Generation
+if ctestsuccess and testsuccess then --IF we have both required modules pass their tests, use both for Seed Generation
 	time = os.time() % 100000
 	seed = crypto.rng() * (Ceiling - Floor) + time + math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(Floor,MasterCeiling)
         math.randomseed(seed)
