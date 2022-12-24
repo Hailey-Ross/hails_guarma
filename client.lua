@@ -1,24 +1,25 @@
+local transitions = Config.transitions
 local Debug = Config.debug
 local Floor = Config.SeedFloor
 local Ceiling = Config.SeedCeiling
 local MasterCeiling = Ceiling + Ceiling  --Create maximum
 local testsuccess, result = pcall(os.time) --Time Module Test Call
 local ctestsuccess, crypto = pcall(require, "crypto") --Crypto Module Test Call
-local seed = math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,2) - math.random(Floor,MasterCeiling) -- Default Seed Generation ALL BUILT IN LUA
+local seed = math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,2) - math.random(-MasterCeiling,MasterCeiling) -- Default Seed Generation ALL BUILT IN LUA
 local time --set Time Variable
 
 if ctestsuccess and testsuccess then --IF we have both required modules pass their tests, use both for Seed Generation
 	time = os.time() % 10000
-	seed = crypto.rng() * (Ceiling - Floor) + time + math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(Floor,MasterCeiling)
+	seed = crypto.rng() * (Ceiling - Floor) + time + math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(-MasterCeiling,MasterCeiling)
         math.randomseed(seed)
             if Debug == true then print("Crypto Module PASSED Test."); print("os.time PASSED Test. Result: " .. result); print("Resulting SEED: " ..seed) end
 elseif ctestsuccess then --IF only crypto passes, use that for seed generation
-	seed = crypto.rng() * (Ceiling - Floor) + math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(Floor,MasterCeiling)
+	seed = crypto.rng() * (Ceiling - Floor) + math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(-MasterCeiling,MasterCeiling)
         math.randomseed(seed)
             if Debug == true then print("Crypto Module PASSED Test."); print("os.time FAILED Test. Result: " .. result); print("Resulting SEED: " ..seed) end
 elseif testsuccess then --IF only time passes its test then use that for seed generation
 	time = os.time() % 10000
-	seed = time + math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(Floor,MasterCeiling)
+	seed = time + math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(-MasterCeiling,MasterCeiling)
         math.randomseed(seed)
             if Debug == true then print("Crypto Module FAILED Test."); print("os.time PASSED Test. Result: " .. result); print("Resulting SEED: " ..seed) end
 else --IF All else fails then fall back on default seed generation, pure psuedo-random gneration
