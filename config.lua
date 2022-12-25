@@ -6,8 +6,6 @@ Config.PricetoSD = 0
 Config.SeedFloor = 1
 Config.SeedCeiling = 9001
 
-Config.SeedFloor = 1
-Config.SeedCeiling = 9001
 Config.debug = false
 Config.transitions = true
 
