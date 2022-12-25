@@ -124,10 +124,10 @@ Citizen.CreateThread(function() -- TP Back from Guarma
                     if Config.debug == true then print("Section: 16-20"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 2668.939, -1545.1269, 45.819)
                 elseif spawnroll >= 21 and spawnroll <= 25 then
-                    if Config.debug == true then print("Section: 21-25"): print("Final Roll: "..spawnroll) end
+                    if Config.debug == true then print("Section: 21-25"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 2674.150, -1544.462, 45.819)
                 else
-                    if Config.debug == true then print("Error: No Category within range"): print("Final Roll: "..spawnroll) end
+                    if Config.debug == true then print("Error: No Category within range"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 2665.937, -1554.36, 45.522)
                 end
                 if Config.transitions == true then DoScreenFadeIn(4000); ShutdownLoadingScreen() end
