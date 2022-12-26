@@ -11,20 +11,20 @@ local time --set Time Variable
 if ctestsuccess and testsuccess then --IF we have both required modules pass their tests, use both for Seed Generation
 	time = os.time() % 10000
 	seed = crypto.rng() * (Ceiling - Floor) + time + math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(-MasterCeiling,MasterCeiling)
-        math.randomseed(seed)
-            if Debug == true then print("Crypto Module PASSED Test."); print("os.time PASSED Test. Result: " .. result); print("Resulting SEED: " ..seed) end
+    math.randomseed(seed)
+    if Debug == true then print("Crypto Module PASSED Test."); print("os.time PASSED Test. Result: " .. result); print("Resulting SEED: " ..seed) end
 elseif ctestsuccess then --IF only crypto passes, use that for seed generation
 	seed = crypto.rng() * (Ceiling - Floor) + math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(-MasterCeiling,MasterCeiling)
-        math.randomseed(seed)
-            if Debug == true then print("Crypto Module PASSED Test."); print("os.time FAILED Test. Result: " .. result); print("Resulting SEED: " ..seed) end
+    math.randomseed(seed)
+    if Debug == true then print("Crypto Module PASSED Test."); print("os.time FAILED Test. Result: " .. result); print("Resulting SEED: " ..seed) end
 elseif testsuccess then --IF only time passes its test then use that for seed generation
 	time = os.time() % 10000
 	seed = time + math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(-MasterCeiling,MasterCeiling)
-        math.randomseed(seed)
-            if Debug == true then print("Crypto Module FAILED Test."); print("os.time PASSED Test. Result: " .. result); print("Resulting SEED: " ..seed) end
+    math.randomseed(seed)
+    if Debug == true then print("Crypto Module FAILED Test."); print("os.time PASSED Test. Result: " .. result); print("Resulting SEED: " ..seed) end
 else --IF All else fails then fall back on default seed generation, pure psuedo-random gneration
-        math.randomseed(seed)
-	    if Debug == true then print("Crypto Module FAILED Test."); print("os.time FAILED Test. Result: " .. result); print("Resulting SEED: " ..seed) end
+    math.randomseed(seed)
+	if Debug == true then print("Crypto Module FAILED Test."); print("os.time FAILED Test. Result: " .. result); print("Resulting SEED: " ..seed) end
 end
 
 Citizen.CreateThread(function()

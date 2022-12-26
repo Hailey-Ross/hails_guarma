@@ -1,7 +1,7 @@
 Config = {}
 
-Config.Debug = false
-Config.transitions = true
+Config.Debug = false       --true / false -- outputs debug information to console on true
+Config.transitions = true  --true / false -- Enable or Disable the Transitions during travel
 
 Config.PricetoGuarma = 3.5
 Config.PricetoSD = 0

@@ -1,5 +1,5 @@
 local VorpCore = {}
-local Debug = Config.Debug
+local Debug = Config.Debug  --Debugging Variable
 
 TriggerEvent("getCore",function(core)
     VorpCore = core
