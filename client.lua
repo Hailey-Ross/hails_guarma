@@ -1,8 +1,8 @@
-local transitions = Config.transitions
-local Debug = Config.Debug
-local Floor = Config.SeedFloor
-local Ceiling = Config.SeedCeiling
-local MasterCeiling = Ceiling + Ceiling  --Create maximum ceiling from math(s)
+local transitions = Config.transitions   --Transition Config
+local Debug = Config.Debug               --Debug Flag
+local Floor = Config.SeedFloor           --Set max floor for RNG
+local Ceiling = Config.SeedCeiling       --Set max ceiling for RNG
+local MasterCeiling = Ceiling + Ceiling  --Create maximum of ceiling from math(s)
 local testsuccess, result = pcall(os.time) --Time Module Test Call
 local ctestsuccess, crypto = pcall(require, "crypto") --Crypto Module Test Call
 local seed = math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,2) - math.random(-MasterCeiling,MasterCeiling) -- Default Seed Generation ALL BUILT IN LUA
