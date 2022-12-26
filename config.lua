@@ -1,13 +1,13 @@
 Config = {}
 
+Config.Debug = false
+Config.transitions = true
+
 Config.PricetoGuarma = 3.5
 Config.PricetoSD = 0
 
-Config.SeedFloor = 1
+Config.SeedFloor = 0
 Config.SeedCeiling = 9001
-
-Config.Debug = false
-Config.transitions = true
 
 Config.NoMoney = 'You do not have enough cash to cover the Ticket Fee'
 
