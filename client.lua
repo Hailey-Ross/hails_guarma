@@ -1,5 +1,5 @@
 local transitions = Config.transitions
-local Debug = Config.debug
+local Debug = Config.Debug
 local Floor = Config.SeedFloor
 local Ceiling = Config.SeedCeiling
 local MasterCeiling = Ceiling + Ceiling  --Create maximum ceiling from math(s)
@@ -43,7 +43,7 @@ Citizen.CreateThread(function()
             if IsControlJustReleased(0, 0x760A9C6F) then
                 local player = PlayerPedId()
                 local Ped = PlayerPedId()
-                if Config.debug == true then print("Pre-roll 1: "..diceroll); print("Pre-roll 2: "..diceroll2); print("Pre-roll 3: "..diceroll3); print("Pre-roll 4: "..diceroll4); print("Pre-roll 5: "..diceroll5); print("Roll Math: "..diceroll.." + "..diceroll2.." + "..diceroll3.." + "..diceroll4.." + "..diceroll5) end
+                if Debug == true then print("Pre-roll 1: "..diceroll); print("Pre-roll 2: "..diceroll2); print("Pre-roll 3: "..diceroll3); print("Pre-roll 4: "..diceroll4); print("Pre-roll 5: "..diceroll5); print("Roll Math: "..diceroll.." + "..diceroll2.." + "..diceroll3.." + "..diceroll4.." + "..diceroll5) end
                 TriggerServerEvent('wcrp:guarmaticketbuy')
                 TriggerEvent("vorp:TipBottom", Config.TravelTiptextTO, 5000)
                 FreezeEntityPosition(Ped,true) -- Freeze person
@@ -56,22 +56,22 @@ Citizen.CreateThread(function()
                 Citizen.InvokeNative(0x74E2261D2A66849A, true) -- Set Guarma Horizon Status
                 Wait(20000)
                 if spawnroll <= 5 and spawnroll >= 15 then
-                    if Config.debug == true then print("Section: 5"); print("Final Roll: "..spawnroll) end
+                    if Debug == true then print("Section: 5"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 1269.325, -6851.982, 43.168)
                 elseif spawnroll <= 16 and spawnroll >= 26 then
-                    if Config.debug == true then print("Section: 6-9"); print("Final Roll: "..spawnroll) end
+                    if Debug == true then print("Section: 6-9"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 1269.55, -6854.188, 43.168)
                 elseif spawnroll <= 27 and spawnroll >= 37 then
-                    if Config.debug == true then print("Section: 10-15"); print("Final Roll: "..spawnroll) end
+                    if Debug == true then print("Section: 10-15"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 1269.724, -6855.1577, 43.168)
                 elseif spawnroll <= 38 and spawnroll >= 48 then
-                    if Config.debug == true then print("Section: 16-20"); print("Final Roll: "..spawnroll) end
+                    if Debug == true then print("Section: 16-20"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 1270.245, -6854.557, 43.168)
                 elseif spawnroll <= 49 and spawnroll >= 56 then
-                    if Config.debug == true then print("Section: 21-25"); print("Final Roll: "..spawnroll) end
+                    if Debug == true then print("Section: 21-25"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 1265.973, -6854.015, 43.168)
                 else
-                    if Config.debug == true then print("Error: No Category within range"); print("Final Roll: "..spawnroll) end
+                    if Debug == true then print("Error: No Category within range"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 1270.34, -6857.038, 43.168)
                 end
                 FreezeEntityPosition(Ped,false) -- Unfreeze person
@@ -97,7 +97,7 @@ Citizen.CreateThread(function() -- TP Back from Guarma
             if IsControlJustReleased(0, 0x760A9C6F) then
                 local player = PlayerPedId()
                 local Ped = PlayerPedId()
-                if Config.debug == true then print("Pre-roll 1: "..diceroll); print("Pre-roll 2: "..diceroll2); print("Pre-roll 3: "..diceroll3); print("Pre-roll 4: "..diceroll4); print("Pre-roll 5: "..diceroll5); print("Roll Math: "..diceroll.." + "..diceroll2.." + "..diceroll3.." + "..diceroll4.." + "..diceroll5) end
+                if Debug == true then print("Pre-roll 1: "..diceroll); print("Pre-roll 2: "..diceroll2); print("Pre-roll 3: "..diceroll3); print("Pre-roll 4: "..diceroll4); print("Pre-roll 5: "..diceroll5); print("Roll Math: "..diceroll.." + "..diceroll2.." + "..diceroll3.." + "..diceroll4.." + "..diceroll5) end
                 TriggerServerEvent('wcrp:guarmaticketbuy2')
                 TriggerEvent("vorp:TipBottom", Config.TravelTiptextFROM, 5000)
                 if Config.transitions == true then ExecuteCommand('hud') end
@@ -112,22 +112,22 @@ Citizen.CreateThread(function() -- TP Back from Guarma
                 Wait(20000)
                 --Wait(2000)
                 if spawnroll == 5 then
-                    if Config.debug == true then print("Section: 5"); print("Final Roll: "..spawnroll) end
+                    if Debug == true then print("Section: 5"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 2670.69, -1547.34, 45.819)
                 elseif spawnroll >= 6 and spawnroll <= 9 then
-                    if Config.debug == true then print("Section: 6-9"); print("Final Roll: "..spawnroll) end
+                    if Debug == true then print("Section: 6-9"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 2673.952, -1547.87, 45.819)
                 elseif spawnroll >= 10 and spawnroll <= 15 then
-                    if Config.debug == true then print("Section: 10-15"); print("Final Roll: "..spawnroll) end
+                    if Debug == true then print("Section: 10-15"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 2670.850, -1550.013, 45.819)
                 elseif spawnroll >= 16 and spawnroll <= 20 then
-                    if Config.debug == true then print("Section: 16-20"); print("Final Roll: "..spawnroll) end
+                    if Debug == true then print("Section: 16-20"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 2668.939, -1545.1269, 45.819)
                 elseif spawnroll >= 21 and spawnroll <= 25 then
-                    if Config.debug == true then print("Section: 21-25"); print("Final Roll: "..spawnroll) end
+                    if Debug == true then print("Section: 21-25"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 2674.150, -1544.462, 45.819)
                 else
-                    if Config.debug == true then print("Error: No Category within range"); print("Final Roll: "..spawnroll) end
+                    if Debug == true then print("Error: No Category within range"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 2665.937, -1554.36, 45.522)
                 end
                 if Config.transitions == true then DoScreenFadeIn(4000); ShutdownLoadingScreen() end
