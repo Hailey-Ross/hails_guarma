@@ -140,7 +140,6 @@ Citizen.CreateThread(function() -- TP Back from Guarma
     end
 end)
 
-
 function DrawTxt(str, x, y, w, h, enableShadow, col1, col2, col3, a, centre)
     local str = CreateVarString(10, "LITERAL_STRING", str, Citizen.ResultAsLong())
    SetTextScale(w, h)
