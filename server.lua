@@ -1,4 +1,5 @@
 local VorpCore = {}
+local Debug = Config.Debug
 
 TriggerEvent("getCore",function(core)
     VorpCore = core
@@ -11,7 +12,7 @@ AddEventHandler("wcrp:guarmaticketbuy", function()
     local Character = User.getUsedCharacter
     local _ticket = Config.PricetoGuarma
     Character.removeCurrency(0, _ticket)
-
+    if Debug == true then print("Player paid " .. _ticket .. "to go to Guarma") end
 end)
 
 RegisterServerEvent('wcrp:guarmaticketbuy2')
@@ -21,5 +22,5 @@ AddEventHandler("wcrp:guarmaticketbuy2", function()
     local Character = User.getUsedCharacter
     local _ticket = Config.PricetoSD
     Character.removeCurrency(0, _ticket)
-
+    if Debug == true then print("Player paid " .. _ticket .. "to return from Guarma") end
 end)
