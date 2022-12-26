@@ -23,7 +23,7 @@ elseif testsuccess then --IF only time passes its test then use that for seed ge
 	seed = time + math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(-MasterCeiling,MasterCeiling)
     math.randomseed(seed)
     if Debug == true then print("Crypto Module FAILED Test."); print("os.time PASSED Test. Result: " .. result); print("Resulting SEED: " ..seed) end
-else --IF All else fails then fall back on default seed generation, pure psuedo-random gneration
+else --IF All else fails then fall back on pure psuedo-random generation
     math.randomseed(seed)
 	if Debug == true then print("FALLBACK Mode: Using Psuedo-Random Seed Generation"); print("Crypto Module FAILED Test."); print("os.time FAILED Test. Result: " .. result); print("Resulting SEED: " ..seed) end
 end
