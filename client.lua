@@ -47,10 +47,10 @@ Citizen.CreateThread(function()
                 TriggerServerEvent('wcrp:guarmaticketbuy')
                 TriggerEvent("vorp:TipBottom", Config.TravelTiptextTO, 5000)
                 FreezeEntityPosition(Ped,true) -- Freeze person
-                if Config.transitions == true then ExecuteCommand('hud'); DoScreenFadeOut(3000) end
+                if transitions == true then ExecuteCommand('hud'); DoScreenFadeOut(3000) end
                 Wait(3000)
                 SetEntityCoords(Ped, 2524.167, -1839.067, 44.93) -- Boat Transition area
-                if Config.transitions == true then DoScreenFadeIn(500); Citizen.InvokeNative(0x1E5B70E53DB661E5, 0, 0, 0, 'Guarma', 'El Bahia Del Paz', 'Your boat is sailing. .') end
+                if transitions == true then DoScreenFadeIn(500); Citizen.InvokeNative(0x1E5B70E53DB661E5, 0, 0, 0, 'Guarma', 'El Bahia Del Paz', 'Your boat is sailing. .') end
                 Citizen.InvokeNative(0xA657EC9DBC6CC900, 1935063277) -- Native setting Minimap by hash, can be either Guarma or World
                 Citizen.InvokeNative(0xE8770EE02AEE45C2, 1) -- Set Guarma Water Type
                 Citizen.InvokeNative(0x74E2261D2A66849A, true) -- Set Guarma Horizon Status
@@ -75,7 +75,7 @@ Citizen.CreateThread(function()
                     SetEntityCoords(Ped, 1270.34, -6857.038, 43.168)
                 end
                 FreezeEntityPosition(Ped,false) -- Unfreeze person
-                if Config.transitions == true then DoScreenFadeOut(1000); Wait(900); ShutdownLoadingScreen(); Wait(500); DoScreenFadeIn(4000); ExecuteCommand('hud') end
+                if transitions == true then DoScreenFadeOut(1000); Wait(900); ShutdownLoadingScreen(); Wait(500); DoScreenFadeIn(4000); ExecuteCommand('hud') end
                 guarma = true
             end
         end
@@ -100,11 +100,11 @@ Citizen.CreateThread(function() -- TP Back from Guarma
                 if Debug == true then print("Pre-roll 1: "..diceroll); print("Pre-roll 2: "..diceroll2); print("Pre-roll 3: "..diceroll3); print("Pre-roll 4: "..diceroll4); print("Pre-roll 5: "..diceroll5); print("Roll Math: "..diceroll.." + "..diceroll2.." + "..diceroll3.." + "..diceroll4.." + "..diceroll5) end
                 TriggerServerEvent('wcrp:guarmaticketbuy2')
                 TriggerEvent("vorp:TipBottom", Config.TravelTiptextFROM, 5000)
-                if Config.transitions == true then ExecuteCommand('hud') end
-                if Config.transitions == true then DoScreenFadeOut(3000) end
+                if transitions == true then ExecuteCommand('hud') end
+                if transitions == true then DoScreenFadeOut(3000) end
 		FreezeEntityPosition(Ped,true)
                 Wait(3000)
-                if Config.transitions == true then DoScreenFadeIn(500); Citizen.InvokeNative(0x1E5B70E53DB661E5, 0, 0, 0, 'Mainland', 'Saint Denis Harbor', 'Feeling refreshed. .') end
+                if transitions == true then DoScreenFadeIn(500); Citizen.InvokeNative(0x1E5B70E53DB661E5, 0, 0, 0, 'Mainland', 'Saint Denis Harbor', 'Feeling refreshed. .') end
                 Citizen.InvokeNative(0x74E2261D2A66849A, 0)
                 Citizen.InvokeNative(0xA657EC9DBC6CC900, -1868977180)
                 Citizen.InvokeNative(0xE8770EE02AEE45C2, 0)
@@ -130,10 +130,10 @@ Citizen.CreateThread(function() -- TP Back from Guarma
                     if Debug == true then print("Error: No Category within range"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 2665.937, -1554.36, 45.522)
                 end
-                if Config.transitions == true then DoScreenFadeIn(4000); ShutdownLoadingScreen() end
+                if transitions == true then DoScreenFadeIn(4000); ShutdownLoadingScreen() end
                 FreezeEntityPosition(Ped,false)
                 Wait(1000)
-                if Config.transitions == true then ExecuteCommand('hud') end
+                if transitions == true then ExecuteCommand('hud') end
 		guarma = false
             end
         end
