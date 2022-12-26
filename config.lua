@@ -6,8 +6,8 @@ Config.transitions = true  --true / false -- Enable or Disable the Transitions d
 Config.PricetoGuarma = 3.5
 Config.PricetoSD = 0
 
-Config.SeedFloor = 0
-Config.SeedCeiling = 9001
+Config.SeedFloor = 1
+Config.SeedCeiling = 40000
 
 Config.NoMoney = 'You do not have enough cash to cover the Ticket Fee'
 

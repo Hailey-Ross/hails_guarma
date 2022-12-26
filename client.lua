@@ -10,7 +10,7 @@ local time                                 --set Time Variable
 local traveltext                           --set traveltext variable
 
 if ctestsuccess and testsuccess then --IF both required modules pass their tests, use both for Seed Generation
-	time = os.time() % 10000
+	time = os.time() % 1000
 	seed = crypto.rng() * (Ceiling - Floor) + time + math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(-MasterCeiling,MasterCeiling)
     math.randomseed(seed)
     if Debug == true then print("Crypto Module PASSED Test."); print("os.time PASSED Test. Result: " .. result); print("BEST Setup Detected: Using Cryptography + os.time RNG Seeding Mode"); print("Resulting SEED: " ..seed) end
@@ -19,7 +19,7 @@ elseif ctestsuccess then --IF only crypto passes, use that for seed generation
     math.randomseed(seed)
     if Debug == true then print("Crypto Module PASSED Test."); print("os.time FAILED Test. Result: " .. result); print("Resulting SEED: " ..seed) end
 elseif testsuccess then --IF only time passes its test then use that for seed generation
-	time = os.time() % 10000
+	time = os.time() % 1000
 	seed = time + math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(-MasterCeiling,MasterCeiling)
     math.randomseed(seed)
     if Debug == true then print("Crypto Module FAILED Test."); print("os.time PASSED Test. Result: " .. result); print("Resulting SEED: " ..seed) end
