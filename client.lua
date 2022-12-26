@@ -9,7 +9,7 @@ local seed = math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.rand
 local time                                 --set Time Variable
 local traveltext                           --set traveltext variable
 
-if ctestsuccess and testsuccess then --IF we have both required modules pass their tests, use both for Seed Generation
+if ctestsuccess and testsuccess then --IF both required modules pass their tests, use both for Seed Generation
 	time = os.time() % 10000
 	seed = crypto.rng() * (Ceiling - Floor) + time + math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(-MasterCeiling,MasterCeiling)
     math.randomseed(seed)
