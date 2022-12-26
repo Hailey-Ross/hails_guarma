@@ -13,7 +13,7 @@ if ctestsuccess and testsuccess then --IF both required modules pass their tests
 	time = os.time() % 10000
 	seed = crypto.rng() * (Ceiling - Floor) + time + math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(-MasterCeiling,MasterCeiling)
     math.randomseed(seed)
-    if Debug == true then print("Crypto Module PASSED Test."); print("os.time PASSED Test. Result: " .. result); print("Resulting SEED: " ..seed) end
+    if Debug == true then print("Crypto Module PASSED Test."); print("os.time PASSED Test. Result: " .. result); print("BEST Setup Detected: Using Cryptography + os.time RNG Seeding Mode"); print("Resulting SEED: " ..seed) end
 elseif ctestsuccess then --IF only crypto passes, use that for seed generation
 	seed = crypto.rng() * (Ceiling - Floor) + math.random(Floor,Ceiling) + math.random(Floor,Ceiling) * math.random(1,3) - math.random(-MasterCeiling,MasterCeiling)
     math.randomseed(seed)
@@ -25,7 +25,7 @@ elseif testsuccess then --IF only time passes its test then use that for seed ge
     if Debug == true then print("Crypto Module FAILED Test."); print("os.time PASSED Test. Result: " .. result); print("Resulting SEED: " ..seed) end
 else --IF All else fails then fall back on default seed generation, pure psuedo-random gneration
     math.randomseed(seed)
-	if Debug == true then print("Crypto Module FAILED Test."); print("os.time FAILED Test. Result: " .. result); print("Resulting SEED: " ..seed) end
+	if Debug == true then print("FALLBACK Mode: Using Psuedo-Random Seed Generation"); print("Crypto Module FAILED Test."); print("os.time FAILED Test. Result: " .. result); print("Resulting SEED: " ..seed) end
 end
 
 Citizen.CreateThread(function()
