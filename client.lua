@@ -56,22 +56,22 @@ Citizen.CreateThread(function()
                 Citizen.InvokeNative(0x74E2261D2A66849A, true) -- Set Guarma Horizon Status
                 Wait(20000)
                 if spawnroll <= 5 and spawnroll >= 15 then
-                    if Debug == true then print("Section: 5"); print("Final Roll: "..spawnroll) end
+                    if Debug == true then print("Section: 5 - 15"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 1269.325, -6851.982, 43.168)
                 elseif spawnroll <= 16 and spawnroll >= 26 then
-                    if Debug == true then print("Section: 6-9"); print("Final Roll: "..spawnroll) end
+                    if Debug == true then print("Section: 16 - 26"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 1269.55, -6854.188, 43.168)
                 elseif spawnroll <= 27 and spawnroll >= 37 then
-                    if Debug == true then print("Section: 10-15"); print("Final Roll: "..spawnroll) end
+                    if Debug == true then print("Section: 27 - 37"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 1269.724, -6855.1577, 43.168)
                 elseif spawnroll <= 38 and spawnroll >= 48 then
-                    if Debug == true then print("Section: 16-20"); print("Final Roll: "..spawnroll) end
+                    if Debug == true then print("Section: 38 - 48"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 1270.245, -6854.557, 43.168)
                 elseif spawnroll <= 49 and spawnroll >= 56 then
-                    if Debug == true then print("Section: 21-25"); print("Final Roll: "..spawnroll) end
+                    if Debug == true then print("Section: 49 - 56"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 1265.973, -6854.015, 43.168)
                 else
-                    if Debug == true then print("Error: No Category within range"); print("Final Roll: "..spawnroll) end
+                    if Debug == true then print("Error: No Section within range specified"); print("Final Roll: "..spawnroll) end
                     SetEntityCoords(Ped, 1270.34, -6857.038, 43.168)
                 end
                 FreezeEntityPosition(Ped,false) -- Unfreeze person
