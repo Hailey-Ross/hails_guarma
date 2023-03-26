@@ -38,7 +38,6 @@ Citizen.CreateThread(function()
                 Citizen.InvokeNative(0xE8770EE02AEE45C2, 1) -- Set Guarma Water Type
                 Citizen.InvokeNative(0x74E2261D2A66849A, true) -- Set Guarma Horizon Status
                 Wait(20000)
-                --Wait(2000)
                 if Config.debug == true then print("Guarma Spawn") end
                 if spawnroll == 5 then
                     if Config.debug == true then print("Section: 5") end
