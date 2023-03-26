@@ -3,7 +3,7 @@ games {"rdr3"}
 rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aware my resources *will* become incompatible once RedM ships.'
 name "hails_guarma"
 author "Hailey-Ross"
-description "Resource for Traveling to Guarma"
+description "Resource for Traveling to Guarma from Saint Denis"
 url "https://github.com/Hailey-Ross/hails_guarma"
 
 server_scripts {
