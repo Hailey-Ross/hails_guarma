@@ -18,7 +18,7 @@ client_scripts {
     'config.lua'
 }
 
-version '0.1'
+version '0.1.0'
 vorp_checker 'yes'
 vorp_name '^4Resource version Check^3'
 vorp_github 'https://github.com/Hailey-Ross/hails_guarma'
